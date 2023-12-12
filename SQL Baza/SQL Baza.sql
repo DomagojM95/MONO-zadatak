@@ -26,12 +26,17 @@ create table VehicleModel(
 
 alter table VehicleModel add foreign key (VehicleMake) references VehicleMake(ID);
 
+
+
+
 insert into VehicleMake(carname,abrv)
-values('Toyota','Tyt'),('Mazda','Mzd');
+values('Toyota','Tyt'),('Mazda','Mzd'),('volkswagen','VW'),('Ford','Mzd'),('Hyunday','HMC');
 
 select * from VehicleMake;
 
 insert into VehicleModel(VehicleMake,carname,abrv)
-values(1,'Toyota','Tyt');
+values(1,'Toyota','Corola'),(2,'MX-5','MZD'),(3,'Golf 5','VW'),(4,'i30','HMC');
 
 select * from VehicleModel;
+
+
