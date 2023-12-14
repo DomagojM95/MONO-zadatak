@@ -69,3 +69,5 @@ C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\Vehi
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\VehicleCatalog.pdb
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\VehicleCatalog.genruntimeconfig.cache
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\ref\VehicleCatalog.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Ninject.dll
