@@ -21,59 +21,93 @@ namespace VehicleCatalog.Controllers
 
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetMake()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return  BadRequest(ModelState);
+                return BadRequest(ModelState);
             }
             try
             {
-            var vehicleMake=_context.VehicleMake.
-                    Include(make=>make.VehicleModels)
-                    .ToList();
-
-                if(vehicleMake == null) 
+                var make = _context.VehicleMake.ToList();
+                if (make == null || make.Count == 0)
                 {
                     return new EmptyResult();
                 }
-                
 
-                var config = new MapperConfiguration(cfg =>
-                {
-                    cfg.CreateMap<VehicleMake, VehicleMakeDTO>();
-
-                });
-                var mapper = config.CreateMapper();
-                
-                List<VehicleMakeDTO> get= mapper.Map<List<VehicleMakeDTO>>(vehicleMake);
-                return Ok(get);
+                return new JsonResult(_context.VehicleMake.ToList());
             }
             catch (Exception ex)
             {
 
-                return StatusCode(
-                   StatusCodes.Status503ServiceUnavailable,ex);
+                return StatusCode(StatusCodes.Status503ServiceUnavailable);
             }
         }
 
+        //[HttpGet]
+        //[Route("{sifra:int}")]
 
-        [HttpGet]
-        [Route("{sifra:int}")]
-        public IActionResult GetbyId(int id)
+        //public IActionResult GetbyId(int id)
+        //{
+
+
+        //    if (id == 0)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    try
+        //    {
+
+        //        var make = _context.VehicleMake.Find(id);
+
+        //        if (make == null)
+        //        {
+        //            return StatusCode(StatusCodes.Status204NoContent, make);
+        //        }
+
+        //        return new JsonResult(make);
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+        //    }
+
+
+        //}
+
+
+        [HttpPost]
+        public IActionResult PostMake(VehicleMake vehicleMake)
         {
-            if (id==0) 
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var m = _context.VehicleMake.
-                Include(make => make.VehicleModels);
+            try
+            {
+
+                _context.VehicleMake.Add(vehicleMake);
+                _context.SaveChanges();
+
+                return StatusCode(StatusCodes.Status201Created, vehicleMake);
+
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+            }
+
 
 
         }
-
-
-
     }
 }
+
+

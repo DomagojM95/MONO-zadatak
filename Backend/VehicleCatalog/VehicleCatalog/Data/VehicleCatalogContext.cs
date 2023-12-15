@@ -12,10 +12,7 @@ namespace VehicleCatalog.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<VehicleModel>()
-              .HasOne(model => model.Make)
-              .WithMany(make => make.Models)
-              .HasForeignKey(model => model.MakeID);
+            modelBuilder.Entity<VehicleModel>().HasOne(m => m.MakeID);
 
         }
     }
