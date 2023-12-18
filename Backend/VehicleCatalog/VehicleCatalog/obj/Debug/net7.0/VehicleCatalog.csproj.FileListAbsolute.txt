@@ -71,3 +71,8 @@ C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\Vehi
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\ref\VehicleCatalog.dll
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Ninject.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Humanizer.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\System.CodeDom.dll

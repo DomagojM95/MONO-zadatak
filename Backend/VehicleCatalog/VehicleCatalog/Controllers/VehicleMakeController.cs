@@ -12,9 +12,9 @@ namespace VehicleCatalog.Controllers
     [Route("Api/v1/[controller]")]
     public class VehicleMakeController : ControllerBase
     {
-        private readonly VehicleCatalogContext _context;
+        private readonly VehicleCatalogDataContext _context;
 
-        public VehicleMakeController(VehicleCatalogContext context)
+        public VehicleMakeController(VehicleCatalogDataContext context)
         {
             _context = context;
         }
@@ -29,13 +29,13 @@ namespace VehicleCatalog.Controllers
             }
             try
             {
-                var make = _context.VehicleMake.ToList();
+                var make = _context.Makes.ToList();
                 if (make == null || make.Count == 0)
                 {
                     return new EmptyResult();
                 }
 
-                return new JsonResult(_context.VehicleMake.ToList());
+                return new JsonResult(_context.Makes.ToList());
             }
             catch (Exception ex)
             {
@@ -44,41 +44,41 @@ namespace VehicleCatalog.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("{sifra:int}")]
+        [HttpGet]
+        [Route("{sifra:int}")]
 
-        //public IActionResult GetbyId(int id)
-        //{
-
-
-        //    if (id == 0)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    try
-        //    {
-
-        //        var make = _context.VehicleMake.Find(id);
-
-        //        if (make == null)
-        //        {
-        //            return StatusCode(StatusCodes.Status204NoContent, make);
-        //        }
-
-        //        return new JsonResult(make);
+        public IActionResult GetbyId(int id)
+        {
 
 
+            if (id == 0)
+            {
+                return BadRequest(ModelState);
+            }
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+            try
+            {
 
-        //        return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
-        //    }
+                var make = _context.Makes.Find(id);
+
+                if (make == null)
+                {
+                    return StatusCode(StatusCodes.Status204NoContent, make);
+                }
+
+                return new JsonResult(make);
 
 
-        //}
+
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
+            }
+
+
+        }
 
 
         [HttpPost]
@@ -92,7 +92,7 @@ namespace VehicleCatalog.Controllers
             try
             {
 
-                _context.VehicleMake.Add(vehicleMake);
+                _context.Makes.Add(vehicleMake);
                 _context.SaveChanges();
 
                 return StatusCode(StatusCodes.Status201Created, vehicleMake);
