@@ -88,6 +88,10 @@ namespace VehicleCatalog.Controllers
             {
                 return BadRequest(ModelState);
             }
+            
+            if(VehicleMakeDTO.ModelID)
+
+
 
             try
             {
