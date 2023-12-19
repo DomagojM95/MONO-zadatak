@@ -19,5 +19,7 @@ namespace VehicleCatalog.Data
 
         public DbSet<VehicleMake> Makes { get; set; }
         public DbSet<VehicleModel> Models { get; set; }
+
+
     }
 }

@@ -88,13 +88,10 @@ namespace VehicleCatalog.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
-            if(VehicleMakeDTO.ModelID)
-
-
 
             try
             {
+               
 
                 _context.Makes.Add(vehicleMake);
                 _context.SaveChanges();
@@ -107,6 +104,10 @@ namespace VehicleCatalog.Controllers
 
                 return StatusCode(StatusCodes.Status503ServiceUnavailable, ex.Message);
             }
+
+
+
+
 
 
 

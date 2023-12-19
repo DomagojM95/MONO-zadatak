@@ -9,7 +9,8 @@ namespace VehicleCatalog.Models
         public string? CarName { get; set; }
         public string? Abrv { get; set; }
 
-        
+
+
 
     }
 }

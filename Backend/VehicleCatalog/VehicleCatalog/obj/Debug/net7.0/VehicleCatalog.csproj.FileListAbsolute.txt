@@ -76,3 +76,5 @@ C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\Vehi
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\VehicleCatalog.RazorAssemblyInfo.cache
+C:\Users\38599\OneDrive\Radna površina\MONO zadatak\Backend\VehicleCatalog\VehicleCatalog\obj\Debug\net7.0\VehicleCatalog.RazorAssemblyInfo.cs

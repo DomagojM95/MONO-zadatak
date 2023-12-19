@@ -6,7 +6,7 @@
 
         public string? Abrv { get; set; }
 
-        public ICollection<VehicleModel> Vehicles { get; set; }
+        
 
 
     }
