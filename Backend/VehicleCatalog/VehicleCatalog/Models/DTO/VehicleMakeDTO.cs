@@ -6,6 +6,6 @@
         public string? CarName { get; set; }
         public string? Abrv { get; set; }
 
-        public int ModelID { get; set; }
+        
     }
 }

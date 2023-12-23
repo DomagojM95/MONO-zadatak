@@ -91,7 +91,7 @@ namespace VehicleCatalog.Controllers
 
             try
             {
-               
+
 
                 _context.Makes.Add(vehicleMake);
                 _context.SaveChanges();
@@ -106,12 +106,87 @@ namespace VehicleCatalog.Controllers
             }
 
 
+        }
 
 
 
+        [HttpPut]
+        [Route("{id:int}")]
 
+
+        public IActionResult Put(int id, VehicleMake vehicleMake)
+        {
+            if (id == 0 || vehicleMake == null)
+            { return BadRequest(); }
+
+
+            try
+            {
+                var makeBaze= _context.Makes.Find(id);
+                if (makeBaze == null)
+                {
+                    return BadRequest();
+                }
+
+                makeBaze.CarName = vehicleMake.CarName;
+                makeBaze.Abrv=vehicleMake.Abrv;
+
+                _context.Makes.Update(makeBaze);
+                _context.SaveChanges();
+
+
+                return StatusCode(StatusCodes.Status200OK, makeBaze);
+
+                
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex);
+            }
 
         }
+
+
+
+        [HttpDelete]
+        [Route("{id:int}")]
+
+
+        public IActionResult Delete(int id) 
+        
+        {
+            if (id == 0) { return BadRequest(); }
+            try
+            {
+
+
+                var makeBase= _context.Makes.Find(id);
+                if (makeBase == null) { return BadRequest(); }
+
+                _context.Makes.Remove(makeBase);
+                _context.SaveChanges();
+
+
+                return new JsonResult("{\"Message\":\"Deleted\"}");
+
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult("{\"Message\":\"Can't delete this\"}",ex);
+
+            }
+
+        }
+
+
+
+
+
+
     }
 }
 
