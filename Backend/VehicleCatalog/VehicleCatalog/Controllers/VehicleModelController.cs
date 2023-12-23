@@ -2,6 +2,7 @@
 using Ninject.Planning;
 using VehicleCatalog.Data;
 using VehicleCatalog.Models;
+using VehicleCatalog.Models.DTO;
 
 namespace VehicleCatalog.Controllers
 {
@@ -48,20 +49,47 @@ namespace VehicleCatalog.Controllers
 
         [HttpPost]
 
-        public IActionResult Post(VehicleModel vehicleModel)
+        public IActionResult Post(VehicleModelDTO vehicleModelDTO)
         {
             if(!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
 
             }
+            if (vehicleModelDTO.IdMake <= 0)
+            {
+                return BadRequest(ModelState);
+            }
 
             try
             {
 
-                _context.Models.Add(vehicleModel);
+                var make = _context.Makes.Find(vehicleModelDTO.MakeId);
+
+                if(make == null)
+                {
+                    return BadRequest(ModelState);
+                }
+
+
+                VehicleModel model = new()
+                {
+
+                    CarName = vehicleModelDTO.CarName,
+                    Abrv = vehicleModelDTO.Abrv,
+                    MakeID=make
+
+
+                };
+
+                _context.Models.Add(model);
                 _context.SaveChanges();
-                return StatusCode(StatusCodes.Status201Created, vehicleModel);
+
+                vehicleModelDTO.ID = model.ID;
+
+                return Ok(vehicleModelDTO);
+
+               
 
             }
             catch (Exception ex)

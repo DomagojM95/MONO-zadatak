@@ -6,6 +6,7 @@
         public int? MakeId { get; set; }
         public string? CarName { get; set; }
         public string? Abrv { get; set; }
+        public int IdMake { get; set; }
 
     }
 }
