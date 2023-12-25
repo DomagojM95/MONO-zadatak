@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Ninject.Planning;
 using VehicleCatalog.Data;
 using VehicleCatalog.Models;
@@ -31,7 +32,7 @@ namespace VehicleCatalog.Controllers
 
             try
             {
-                var models = _context.Models.ToList();
+                var models = _context.Models.Include(m => m.MakeID).ToList();
                 if (models == null || models.Count == 0)
                 {
                     return new EmptyResult();
