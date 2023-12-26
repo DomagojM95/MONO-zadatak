@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "",
+    "build": "react-scripts build && rmdir ..\\..\\Backend\\VehicleCatalog\\VehicleCatalog\\wwwroot /s /q && move /y build../../Backend/VehicleCatalog/VehicleCatalog/wwwroot",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
